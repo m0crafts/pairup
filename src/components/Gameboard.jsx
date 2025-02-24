@@ -73,8 +73,6 @@ export default function Gameboard({ level, matchedShapes, onMatch, onMismatch })
               style={{
                 objectFit: "contain",
               }}
-              onLoad={(e) => (e.target.style.opacity = 1)}
-              onError={(e) => (e.target.style.opacity = 0)}
             />
           </li>
         ))}

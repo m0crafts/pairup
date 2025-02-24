@@ -14,11 +14,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  margin-top: 0.25rem;
+  margin-top: 3rem;
   background-color: #fff;
   text-align: center;
   position: relative;
-  margin-bottom: 1rem;
 }
 
 #root {
@@ -42,7 +41,9 @@ header img {
 main {
   display: flex;
   justify-content: center;
+  /* align-items: center; */
   width: 100%;
+  /* height: 100%; */
 }
 
 /* Grid container */
@@ -55,6 +56,7 @@ main ul {
   max-width: 800px;
   width: 100%;
   justify-content: center;
+  margin-bottom: 3rem;
 }
 
 /* Shape items */
