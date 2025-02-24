@@ -72,7 +72,6 @@ export default function Gameboard({ level, matchedShapes, onMatch, onMismatch })
               alt={shape.name}
               style={{
                 objectFit: "contain",
-                transition: "opacity 0.2s ease-in-out",
               }}
               onLoad={(e) => (e.target.style.opacity = 1)}
               onError={(e) => (e.target.style.opacity = 0)}

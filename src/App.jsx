@@ -17,6 +17,8 @@ function App() {
   const handleNextLevel = () => {
     if (level.id < LEVELS.length) {
       setMatchedShapes(new Set());
+      setModalStatus("");
+
       setLevel({ ...LEVELS[level.id] });
     } else {
       clearInterval(timerRef.current);
