@@ -25,20 +25,23 @@ function App() {
     }
   };
 
-  const handleMatch = (id) => {
-    setMatchedShapes((prev) => new Set(prev).add(id));
-    setStreaks((prev) => prev + 1);
+  const handleMatch = useCallback(
+    (id) => {
+      setMatchedShapes((prev) => new Set(prev).add(id));
+      setStreaks((prev) => prev + 1);
 
-    if (matchedShapes.size + 1 === shapesPerLevel) {
-      clearInterval(timerRef.current);
-      setModalStatus("success");
-      modalRef.current.open(); // No auto-close or auto-next
-    }
-  };
+      if (matchedShapes.size + 1 === shapesPerLevel) {
+        clearInterval(timerRef.current);
+        setModalStatus("success");
+        modalRef.current.open(); // No auto-close or auto-next
+      }
+    },
+    [matchedShapes.size, shapesPerLevel]
+  );
 
-  const handleMismatch = () => {
+  const handleMismatch = useCallback(() => {
     setStreaks(0);
-  };
+  }, []);
 
   const handleTimeup = useCallback(() => {
     setModalStatus("failure");
