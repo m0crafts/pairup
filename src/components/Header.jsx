@@ -14,7 +14,7 @@ export default function Header({
   gameStarted,
 }) {
   const [timeLeft, setTimeLeft] = useState(level.duration);
-
+  const maxProgress = (level.rows * level.cols) / 2;
   // Restart timer when level changes
   useEffect(() => {
     setTimeLeft(level.duration);
@@ -79,7 +79,10 @@ export default function Header({
             <i className="fas fa-forward fa-2x"></i>
           </button>
         </div>
-        <progress min={0} max={(level.rows * level.cols) / 2} value={progress}></progress>
+        <progress min={0} max={maxProgress} value={progress}></progress>
+        <h3 style={{ textWrap: "nowrap" }}>
+          {progress} / {maxProgress}
+        </h3>
       </div>
     </header>
   );
