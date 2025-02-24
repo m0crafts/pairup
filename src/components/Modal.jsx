@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useRef, useImperativeHandle, useEffect } from "react";
 import { createPortal } from "react-dom";
 

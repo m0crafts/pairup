@@ -59,7 +59,10 @@ export default function Header({
           <p className="label">Streak</p>
           <div className="content">
             <p>
-              <span>⭐</span> {streaks}
+              <span>
+                <i className="fas fa-star" style={{ color: "#F5A92F" }}></i>
+              </span>
+              {streaks}
             </p>
           </div>
         </div>
