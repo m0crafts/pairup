@@ -67,7 +67,16 @@ export default function Gameboard({ level, matchedShapes, onMatch, onMismatch })
             }}
             onClick={() => handleSelect(shape.id, index)}
           >
-            <img src={shape.isMystery ? mystery.src : shape.src} alt={shape.name} />
+            <img
+              src={shape.isMystery ? mystery.src : shape.src}
+              alt={shape.name}
+              style={{
+                objectFit: "contain",
+                transition: "opacity 0.2s ease-in-out",
+              }}
+              onLoad={(e) => (e.target.style.opacity = 1)}
+              onError={(e) => (e.target.style.opacity = 0)}
+            />
           </li>
         ))}
       </ul>
